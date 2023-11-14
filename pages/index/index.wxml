@@ -20,4 +20,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <mp-dialog title="Dialog" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view>test content</view>
+  </mp-dialog>
 </view>

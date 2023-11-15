@@ -59,7 +59,7 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <view class="content" bindtap="showModal" data-target="about">
+    <view class="content" bindtap="showUS">
       <image mode="aspectFit" src='/images/list/help.png'></image>
       <text class="text-grey"> 关于我们</text>
     </view>
@@ -71,3 +71,7 @@
     </view>
   </view>
 </view>
+<!-- 关于我们页面 -->
+<mp-dialog title="团队成员" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view>四川大学 李阳 李爱冰 杨耀坤</view>
+</mp-dialog>

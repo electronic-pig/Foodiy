@@ -1,6 +1,6 @@
 /* pages/user/user.wxss */
 .avatar-bg {
-  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+  background-image: linear-gradient(45deg, #39b54a , #8dc63f );
   height: 500rpx;
   padding-top: 80rpx;
   display: flex;

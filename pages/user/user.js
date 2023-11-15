@@ -4,12 +4,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showDialog: false,
+    buttons: [{text: '确认'}]
   },
   // 事件处理函数
   toLogin() {
     wx.navigateTo({
       url: '../login/login',
+    })
+  },
+  showUS(){
+    this.setData({
+      showDialog: true
+    })
+  },
+  tapDialogButton(){
+    this.setData({
+      showDialog: false
     })
   },
 

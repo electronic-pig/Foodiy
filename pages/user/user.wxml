@@ -1,0 +1,11 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="avatar-wrapper">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </view>
+  <view class="userinfo" wx:if="{{nickname=='微信用户'}}">
+    <view>您还未授权登录</view>
+    <button type="default" style="margin-top: 20rpx;" bindtap="toLogin">登录</button>
+  </view>
+  <view wx:else="">{{nickname}}</view>
+</view>

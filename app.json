@@ -1,17 +1,60 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/make/make",
+    "pages/diary/diary",
+    "pages/shop/shop",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Foodi",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#0e9eda",
+    "color": "#8a8a8a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "搜索",
+        "iconPath": "images/tabs/search.png",
+        "selectedIconPath": "images/tabs/search-active.png"
+      },
+      {
+        "pagePath": "pages/make/make",
+        "text": "制作",
+        "iconPath": "images/tabs/make.png",
+        "selectedIconPath": "images/tabs/make-active.png"
+      },
+      {
+        "pagePath": "pages/diary/diary",
+        "text": "日记",
+        "iconPath": "images/tabs/diary.png",
+        "selectedIconPath": "images/tabs/diary-active.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "市集",
+        "iconPath": "images/tabs/shop.png",
+        "selectedIconPath": "images/tabs/shop-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "用户",
+        "iconPath": "images/tabs/self.png",
+        "selectedIconPath": "images/tabs/self-active.png"
+      }
+    ]
   }
 }

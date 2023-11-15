@@ -9,10 +9,7 @@
     "pages/user/user"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Foodi",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

@@ -1,11 +1,73 @@
 <!--pages/user/user.wxml-->
-<view class="container">
-  <view class="avatar-wrapper">
-    <image class="avatar" src="{{avatarUrl}}"></image>
+<!-- 头像昵称区域 -->
+<view class="avatar-bg">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
   </view>
-  <view class="userinfo" wx:if="{{nickname=='微信用户'}}">
-    <view>您还未授权登录</view>
-    <button type="default" style="margin-top: 20rpx;" bindtap="toLogin">登录</button>
+  <view class="nickname">
+    <open-data type="userNickName"></open-data>
   </view>
-  <view wx:else="">{{nickname}}</view>
+</view>
+<!-- 标签区域 -->
+<view class="padding flex text-center text-grey bg-white shadow-warp">
+  <view class="flex flex-sub flex-direction solid-right">
+    <view class="flex align-end justify-center">
+      <view class="text-xxl text-green ">9.6</view>
+      <view class="text-df text-green padding-left-xs padding-bottom-xs">分</view>
+    </view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-people"></text> 健康
+    </view>
+  </view>
+  <view class="flex flex-sub flex-direction solid-right">
+    <view class="flex align-end justify-center">
+      <view class="text-xxl text-blue ">10</view>
+      <view class="text-df text-blue padding-left-xs padding-bottom-xs">天</view>
+    </view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-calendar"></text> 打卡
+    </view>
+  </view>
+  <view class="flex flex-sub flex-direction">
+    <view class="flex align-end justify-center">
+      <view class="text-xxl text-yellow ">30</view>
+      <view class="text-df text-yellow padding-left-xs padding-bottom-xs">枚</view>
+    </view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-moneybag"></text> 金币
+    </view>
+  </view>
+</view>
+<!-- 列表区域 -->
+<view class="cu-list menu card-menu margin-top-xl shadow-warp radius">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/body/body">
+      <image mode="aspectFit" src='/images/list/body.png'></image>
+      <text class="text-grey"> 身体数据</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/calendar/calendar">
+      <image mode="aspectFit" src='/images/list/record.png'></image>
+      <text class="text-grey"> 打卡记录</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/help/help">
+      <image mode="aspectFit" src='/images/list/help.png'></image>
+      <text class="text-grey"> 帮助中心</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content" bindtap="showModal" data-target="about">
+      <image mode="aspectFit" src='/images/list/help.png'></image>
+      <text class="text-grey"> 关于我们</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content" bindtap="clean">
+      <image mode="aspectFit" src='/images/list/clean.png'></image>
+      <text class="text-grey"> 清理缓存</text>
+    </view>
+  </view>
 </view>

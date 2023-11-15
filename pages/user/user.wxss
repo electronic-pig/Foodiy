@@ -1,20 +1,25 @@
 /* pages/user/user.wxss */
-.userinfo {
+.avatar-bg {
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+  height: 500rpx;
+  padding-top: 80rpx;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  color: #aaa;
 }
 
-.avatar-wrapper {
-  padding: 0;
-  width: 56px !important;
-  border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 .avatar {
-  display: block;
-  width: 56px;
-  height: 56px;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+
+.nickname {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }

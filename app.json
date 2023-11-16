@@ -21,14 +21,14 @@
   "lazyCodeLoading": "requiredComponents",
   "tabBar": {
     "backgroundColor": "#fff",
-    "selectedColor": "#0e9eda",
+    "selectedColor": "#39b54a",
     "color": "#8a8a8a",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "搜索",
-        "iconPath": "images/tabs/search.png",
-        "selectedIconPath": "images/tabs/search-active.png"
+        "text": "首页",
+        "iconPath": "images/tabs/index.png",
+        "selectedIconPath": "images/tabs/index-active.png"
       },
       {
         "pagePath": "pages/make/make",
@@ -51,8 +51,8 @@
       {
         "pagePath": "pages/user/user",
         "text": "用户",
-        "iconPath": "images/tabs/self.png",
-        "selectedIconPath": "images/tabs/self-active.png"
+        "iconPath": "images/tabs/user.png",
+        "selectedIconPath": "images/tabs/user-active.png"
       }
     ]
   }

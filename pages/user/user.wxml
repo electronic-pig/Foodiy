@@ -41,19 +41,19 @@
 <!-- 列表区域 -->
 <view class="cu-list menu card-menu margin-top-xl shadow-warp radius">
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/body/body">
+    <navigator class="content" url="/pages/body/body" hover-class="none">
       <image mode="aspectFit" src='/images/list/body.png'></image>
       <text class="text-grey"> 身体数据</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/calendar/calendar">
+    <navigator class="content" url="/pages/calendar/calendar" hover-class="none">
       <image mode="aspectFit" src='/images/list/record.png'></image>
       <text class="text-grey"> 打卡记录</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/help/help">
+    <navigator class="content" url="/pages/help/help" hover-class="none">
       <image mode="aspectFit" src='/images/list/help.png'></image>
       <text class="text-grey"> 帮助中心</text>
     </navigator>

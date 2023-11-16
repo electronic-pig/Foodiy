@@ -23,7 +23,20 @@ Page({
       showDialog: false
     })
   },
-
+  clean(){
+    wx.showLoading({
+      title: '清理中',
+    });
+    wx.clearStorageSync();
+    // Init.init(false);
+    // this.onShow();
+    wx.hideLoading();
+    wx.showToast({
+      title: '清理成功！',
+      icon: 'success',
+      duration: 2000
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

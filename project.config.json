@@ -40,7 +40,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
+  "libVersion": "3.2.0",
   "appid": "wx2941b5aa57366ce9",
   "projectname": "Foodi",
   "condition": {},

@@ -2,11 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/login/login",
     "pages/make/make",
     "pages/diary/diary",
     "pages/shop/shop",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/help/help"
   ],
   "window": {
     "navigationStyle": "custom"

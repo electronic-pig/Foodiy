@@ -3,5 +3,6 @@
   "projectname": "Foodi",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "3.2.0"
 }

@@ -1,0 +1,24 @@
+<!--pages/help/help.wxml-->
+<!-- 顶部背景导航 -->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">帮助中心</view>
+</cu-custom>
+<!-- 问题列表 -->
+<view class="cells">
+  <view class="item" wx:for="{{List}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+    <view bindtap="isOpen" class="cdn" data-index="{{item.id}}">
+      <view>
+        <image class="img" src="/images/question.png" mode="aspectFill" />
+        <text class="content">{{item.cont}}</text>
+      </view>
+      <view class="cuIcon-unfold" wx:if="{{item.hidden}}"></view>
+      <view class="cuIcon-fold" wx:else></view>
+    </view>
+    <view hidden="{{item.hidden}}" class="hidden">
+      <block wx:for="{{item.invalidActivty}}" wx:for-index="index" wx:for-item="items" wx:key="index">
+        <view class="help">{{items.help}}</view>
+      </block>
+    </view>
+  </view>
+</view>

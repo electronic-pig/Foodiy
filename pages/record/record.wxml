@@ -1,0 +1,7 @@
+<!--pages/record/record.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">打卡记录</view>
+</cu-custom>
+<!-- 日历组件 -->
+<calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />

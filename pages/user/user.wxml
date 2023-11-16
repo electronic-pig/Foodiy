@@ -8,6 +8,10 @@
     <open-data type="userNickName"></open-data>
   </view>
 </view>
+<!-- 波浪样式 -->
+<view class="shadow-blur">
+  <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-black response" style="height:100rpx;margin-top:-100rpx;"></image>
+</view>
 <!-- 标签区域 -->
 <view class="padding flex text-center text-grey bg-white shadow-warp">
   <view class="flex flex-sub flex-direction solid-right">
@@ -47,7 +51,7 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/calendar/calendar" hover-class="none">
+    <navigator class="content" url="/pages/record/record" hover-class="none">
       <image mode="aspectFit" src='/images/list/record.png'></image>
       <text class="text-grey"> 打卡记录</text>
     </navigator>
@@ -73,5 +77,5 @@
 </view>
 <!-- 关于我们页面 -->
 <mp-dialog title="团队成员" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-    <view>四川大学 李阳 李爱冰 杨耀坤</view>
+  <view>四川大学 李阳 李爱冰 杨耀坤</view>
 </mp-dialog>

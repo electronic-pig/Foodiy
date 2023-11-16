@@ -6,6 +6,8 @@
     "pages/diary/diary",
     "pages/shop/shop",
     "pages/user/user",
+    "pages/body/body",
+    "pages/record/record",
     "pages/help/help"
   ],
   "window": {

@@ -1,0 +1,84 @@
+<!--pages/body/body.wxml-->
+<!-- 顶部背景导航 -->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">身体数据</view>
+</cu-custom>
+<!-- 身体数据 -->
+<view class="cu-form-group">
+  <view class="title">性别</view>
+  <picker bindchange="genderChange" value="{{gender}}" range="{{genderArray}}">
+    <view class="picker">
+      {{genderArray[gender]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">生日</view>
+  <picker mode="date" value="{{birthday}}" start="1900-01-01" end="2020-01-01" bindchange="birthdayChange">
+    <view class="picker">
+      {{birthday}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">地址</view>
+  <picker mode="region" bindchange="regionChange" value="{{region}}">
+    <view class="picker">
+      {{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">身高</view>
+  <picker bindchange="heightChange" value="{{height - 150}}" range="{{heightArray}}">
+    <view class="picker">
+      {{height}}cm
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">体重</view>
+  <picker bindchange="weightChange" value="{{weight - 40}}" range="{{weightArray}}">
+    <view class="picker">
+      {{weight}}kg
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">体脂率</view>
+  <picker bindchange="fatRateChange" value="{{fatRate - 10}}" range="{{fatRateArray}}">
+    <view class="picker">
+      {{fatRate}}%
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">血压</view>
+  <picker mode="multiSelector" bindchange="bpChange" value="{{bp}}" range="{{bpArray}}">
+    <view class="picker">
+      {{bp[0]}}mmHg / {{[bp[1]]}}mmHg
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">血糖</view>
+  <picker bindchange="bsChange" value="{{(bs*10)}}" range="{{bsArray}}">
+    <view class="picker">
+      {{bs}}mmol/L
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">运动强度</view>
+  <picker bindchange="intensityChange" value="{{intensity}}" range="{{intensityArray}}">
+    <view class="picker">
+      {{intensityArray[intensity]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">精神压力</view>
+  <switch class="green sm" bindchange='stressChange' checked='{{stress}}'></switch>
+</view>
+<button class="submit" bindtap="submit"><text class="cuIcon-roundcheck"></text> 提交</button>

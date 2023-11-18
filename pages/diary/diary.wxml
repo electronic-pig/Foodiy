@@ -12,9 +12,13 @@
 </view>
 <view class="cart-title">
   <text>今日食谱：</text>
-  <view class="checkIn" hidden='{{checkIn}}' bindtap="showModal">打卡</view>
+  <view class="checkIn" hidden='{{checkIn}}' bindtap="showConfirm">打卡</view>
   <view class="checkIn" hidden='{{!checkIn}}'>已打卡</view>
 </view>
 <view>
   <view style="text-align: center; color: #999; margin-top: 20px;">今日食谱是空的哦~</view>
 </view>
+
+<mp-dialog show="{{showConfirm}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+  <view>确定要打卡吗？</view>
+</mp-dialog>

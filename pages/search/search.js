@@ -1,21 +1,18 @@
-// pages/diary/diary.js
-import Canvas from '../../utils/canvas.js'
+// pages/search/search.js
 Page({
-  ...Canvas.options,
+
   /**
    * 页面的初始数据
    */
   data: {
-    ...Canvas.data,
-    checkIn: false,
-    canvasShow: false,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.draw('runCanvas', 0, 500);
+
   },
 
   /**
@@ -29,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    
+
   },
 
   /**

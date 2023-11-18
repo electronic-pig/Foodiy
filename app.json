@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/food/food",
     "pages/meal/meal",
+    "pages/search/search",
     "pages/logs/logs",
     "pages/make/make",
     "pages/diary/diary",
@@ -43,12 +44,6 @@
         "text": "日记",
         "iconPath": "images/tabs/diary.png",
         "selectedIconPath": "images/tabs/diary-active.png"
-      },
-      {
-        "pagePath": "pages/shop/shop",
-        "text": "市集",
-        "iconPath": "images/tabs/shop.png",
-        "selectedIconPath": "images/tabs/shop-active.png"
       },
       {
         "pagePath": "pages/user/user",

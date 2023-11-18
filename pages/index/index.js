@@ -33,4 +33,9 @@ Page({
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }]
   },
+  search() {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
 })

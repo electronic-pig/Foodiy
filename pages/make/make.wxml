@@ -1,2 +1,10 @@
 <!--pages/make/make.wxml-->
-<text>pages/make/make.wxml</text>
+<cu-custom bgColor="bg-gradual-green">
+  <view slot="content">制作膳食</view>
+</cu-custom>
+
+<view style="display: flex;flex-direction: column;align-items: center;">
+  <image src="/images/make.png" class="make-image"></image>
+  <view class="tip">点击按钮，开始制作属于你的膳食吧！</view>
+  <button class="make" bindtap="add"><text class="cuIcon-roundadd"></text> 制作膳食 </button>
+</view>

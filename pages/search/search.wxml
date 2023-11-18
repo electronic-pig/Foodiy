@@ -1,0 +1,6 @@
+<!--pages/search/search.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">搜索</view>
+</cu-custom>
+<mp-searchbar placeholder="搜索"></mp-searchbar>

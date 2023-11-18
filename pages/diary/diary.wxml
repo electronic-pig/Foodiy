@@ -1,2 +1,20 @@
 <!--pages/diary/diary.wxml-->
-<text>pages/diary/diary.wxml</text>
+<cu-custom bgColor="bg-gradual-green">
+  <view slot="content">日记</view>
+</cu-custom>
+<view class='canvasBox'>
+  <view class='canvasScore' hidden='{{canvasShow}}'>
+    <view class='bigCircle'></view>
+    <view class='middleCircle'></view>
+    <view class='littleCircle'></view>
+    <canvas canvas-id="runCanvas" id="runCanvas" class='canvas'></canvas>
+  </view>
+</view>
+<view class="cart-title">
+  <text>今日食谱：</text>
+  <view class="checkIn" hidden='{{checkIn}}' bindtap="showModal">打卡</view>
+  <view class="checkIn" hidden='{{!checkIn}}'>已打卡</view>
+</view>
+<view>
+  <view style="text-align: center; color: #999; margin-top: 20px;">今日食谱是空的哦~</view>
+</view>

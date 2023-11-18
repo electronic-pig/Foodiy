@@ -1,1 +1,69 @@
 /* pages/diary/diary.wxss */
+.canvasBox {
+  height: 500rpx;
+  position: relative;
+  background-image: linear-gradient(135deg, #39b54a, #8dc63f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvasScore {
+  height: 500rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bigCircle {
+  border: 2px solid skyblue;
+  width: 440rpx;
+  height: 440rpx;
+  position: absolute;
+  border-radius: 50%;
+  top: 15px;
+}
+
+.middleCircle {
+  width: 420rpx;
+  height: 420rpx;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #fff;
+  top: 20px
+}
+
+.littleCircle {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  position: absolute;
+  background-image: linear-gradient(135deg, #39b54a, #8dc63f);
+  top: 25px;
+}
+
+.canvas {
+  width: 420rpx;
+  height: 420rpx;
+  position: absolute;
+  top: 20px;
+  z-index: 9;
+}
+
+.cart-title {
+  height: 90rpx;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  box-sizing: border-box;
+  background: ghostwhite;
+  color: #000;
+}
+
+.checkIn {
+  float: right;
+  text-align: center;
+  color: #39b54a;
+  width: 120rpx;
+  height: 50rpx;
+  border: 1px solid #39b54a;
+  border-radius: 10rpx;
+}

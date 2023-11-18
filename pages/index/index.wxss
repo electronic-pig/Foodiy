@@ -1,1 +1,86 @@
 /**index.wxss**/
+page {
+  background-color: #fff;
+}
+
+.main-block {
+  justify-items: center;
+  height: 500px;
+  width: 100%;
+  background-image: linear-gradient(45deg, #39b54a, #8dc63f);
+  margin-top: -100px;
+}
+
+.slogan {
+  position: absolute;
+  top: 625rpx;
+  left: 25%;
+}
+
+.slogan .image {
+  height: 50rpx;
+  width: 380rpx;
+}
+
+.swp {
+  height: 500rpx;
+  margin-top: 200rpx;
+}
+
+.list {
+  width: 100%;
+}
+
+.list-item {
+  font-size: 40rpx;
+  height: 74px;
+  border-bottom: solid #999 1rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list-img {
+  margin-left: 2%;
+}
+
+.list-type {
+  margin-left: 5%;
+}
+
+.arrow {
+  position: absolute;
+  right: 5%;
+}
+
+.search-bar__form {
+  position: relative;
+  top: 20%;
+  width: 80%;
+  height: 8%;
+  left: 10%;
+  flex: auto;
+  border-radius: 30px;
+  background: #fff;
+  border: 7.5rpx solid #e6e6ea;
+}
+
+.search-bar__box {
+  position: relative;
+  top: 5rpx;
+  padding-left: 40px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.icon-search_in-box {
+  position: absolute;
+  left: 10px;
+}
+
+.search-bar__input {
+  height: 30px;
+  line-height: 30px;
+  font-size: 36rpx;
+  color: #999;
+}

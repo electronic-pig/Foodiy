@@ -3,28 +3,10 @@ page {
   background-color: #fff;
 }
 
-.main-block {
-  justify-items: center;
-  height: 400px;
-  background-image: linear-gradient(135deg, #39b54a, #8dc63f);
-}
-
-.slogan {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
-}
-
-.slogan .image {
-  height: 50rpx;
-  width: 380rpx;
-}
-
 .search-bar__form {
-  width: 80%;
+  width: 90%;
   height: 10%;
-  margin: 15% auto;
+  margin: 2% auto;
   border-radius: 30px;
   background: #fff;
   border: 7.5rpx solid #e6e6ea;
@@ -51,27 +33,20 @@ page {
   color: #999;
 }
 
-.list {
-  width: 100%;
+.list-row {
+  display: flex;
 }
 
 .list-item {
-  font-size: 40rpx;
-  height: 74px;
-  border-bottom: solid #999 1rpx;
+  flex: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .list-img {
-  margin-left: 2%;
-}
-
-.list-type {
-  margin-left: 5%;
-}
-
-.arrow {
-  position: absolute;
-  right: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
 }

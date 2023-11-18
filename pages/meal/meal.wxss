@@ -1,0 +1,52 @@
+/* pages/meal/meal.wxss */
+page {
+  background-color: #fff;
+}
+
+.search-bar__form {
+  width: 90%;
+  height: 10%;
+  margin: 2% auto;
+  border-radius: 30px;
+  background: #fff;
+  border: 7.5rpx solid #e6e6ea;
+}
+
+.search-bar__box {
+  position: relative;
+  top: 5rpx;
+  padding-left: 40px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.icon-search_in-box {
+  position: absolute;
+  left: 10px;
+}
+
+.search-bar__input {
+  height: 30px;
+  line-height: 30px;
+  font-size: 36rpx;
+  color: #999;
+}
+
+.list-row {
+  display: flex;
+}
+
+.list-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+}

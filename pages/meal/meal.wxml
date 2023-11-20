@@ -11,13 +11,13 @@
 </view>
 <view class='list-row'>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=grain">
+    <navigator url="../search/search?cata=grain">
       <image class='list-img' src='../../images/meal/breakfast.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>早餐</text></view>
   </view>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=vegetable">
+    <navigator url="../search/search?cata=vegetable">
       <image class='list-img' src='../../images/meal/lunch.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>午餐</text></view>
@@ -25,13 +25,13 @@
 </view>
 <view class='list-row'>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=fruit">
+    <navigator url="../search/search?cata=fruit">
       <image class='list-img' src='../../images/meal/dinner.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>晚餐</text></view>
   </view>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=meat">
+    <navigator url="../search/search?cata=meat">
       <image class='list-img' src='../../images/meal/noodle.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>面类餐</text></view>
@@ -39,13 +39,13 @@
 </view>
 <view class='list-row'>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=fruit">
+    <navigator url="../search/search?cata=fruit">
       <image class='list-img' src='../../images/meal/vegetable.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>全素餐</text></view>
   </view>
   <view class='list-item'>
-    <navigator url="../searchresult/searchresult?cata=meat">
+    <navigator url="../search/search?cata=meat">
       <image class='list-img' src='../../images/meal/keep.jpg'></image>
     </navigator>
     <view class='list-type'><text class='text-xl'>健身餐</text></view>

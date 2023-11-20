@@ -16,7 +16,7 @@
         <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
       </view>
       <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
-        <view class="text-black text-xxl" style='border:1px solid #39b54a;border-radius:15rpx;'>
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
           {{item.score}}
         </view>
         <view class="text-grey text-xs">{{item.eva}}</view>

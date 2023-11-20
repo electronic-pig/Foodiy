@@ -8,7 +8,7 @@
 <view wx:if="{{list.length}}">
   <view class="cu-list menu-avatar">
     <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{list}}" wx:key="index" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
-      <navigator url="../details/details?id={{item.id}}">
+      <navigator url="../details/details?name={{item.name}}" hover-class="none">
         <image class="avatar" src="{{item.image}}"></image>
       </navigator>
       <view class="content">

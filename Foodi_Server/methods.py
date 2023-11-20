@@ -2,10 +2,8 @@
 # @Time: 2023/11/20 11:34
 # @File: methods.py
 # @Software: PyCharm
-import re
 
 import pandas as pd
-import requests
 
 
 def init_Food():
@@ -28,7 +26,7 @@ def init_Food():
         for j in range(0, 18):
             row[j] = df.iloc[i, j]
         cata = ''  # 食材种类
-        eva = ''  #评价等级
+        eva = ''  # 评价等级
         color = ''  # 边框颜色
         # 食材分类
         if 0 <= i <= 13:
@@ -52,14 +50,12 @@ def init_Food():
         if row[17] > 9:
             eva = 'Excellent'
             color = '#39b54a'
-        foodItem = dict(id=i, name=row[0], cal=row[16], cata=cata, amount=100, score=row[17], eva=eva, color=color,
+        foodItem = dict(name=row[0], cal=row[16], cata=cata, amount=100, score=row[17], eva=eva, color=color,
                         nutrition=[row[1], row[2], row[3], row[14], row[15], row[4], row[8], row[9], row[6], row[5],
-                                   row[7],row[10], row[11], row[12],row[13]], image=imageurls[i])
+                                   row[7], row[10], row[11], row[12], row[13]], image=imageurls[i])
         food.append(foodItem)
-    print(food)
     return food
 
 
-
 if __name__ == '__main__':
-    init_Food()
+    pass

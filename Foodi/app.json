@@ -4,6 +4,7 @@
     "pages/food/food",
     "pages/meal/meal",
     "pages/search/search",
+    "pages/details/details",
     "pages/logs/logs",
     "pages/make/make",
     "pages/diary/diary",

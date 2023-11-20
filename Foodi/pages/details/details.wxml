@@ -1,0 +1,82 @@
+<!--pages/details/details.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">食物详情</view>
+</cu-custom>
+<view class="image-box">
+  <image class="image" src="{{foodItem.image}}"></image>
+</view>
+<view style="display: flex; justify-content: space-between;border-bottom: 1rpx solid #e9e9e9;">
+  <view style="display: flex; flex-direction: column;">
+    <text class="name">{{foodItem.name}}</text>
+    <text class="info">{{foodItem.cal}}kcal·{{foodItem.amount}}g</text>
+  </view>
+  <view style="display: flex; flex-direction: column; align-items: flex-end;margin-right: 10px;">
+    <view class="score" style='border-color:{{foodItem.color}}'><text>{{foodItem.score}}</text></view>
+    <text class="eva">{{foodItem.eva}}</text>
+  </view>
+</view>
+
+<button class="make" bindtap="make"><text class="cuIcon-roundadd"></text> 制作膳食</button>
+
+<view class="more-info-bg">
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item text-xl flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+        {{Tab[index]}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{TabCur==0}}">
+    <view class="padding flex text-center text-grey bg-white">
+      <view class="flex flex-sub flex-direction solid-right">
+        <view class="flex align-end justify-center">
+          <view class="text-sl text-green">{{foodItem.nutrition[0]}}</view>
+          <view class="text-green" style="font-size: 30px;">g</view>
+        </view>
+        <view class="text-xxl">糖</view>
+      </view>
+      <view class="flex flex-sub flex-direction solid-right">
+        <view class="flex align-end justify-center">
+          <view class="text-sl text-green">{{foodItem.nutrition[1]}}</view>
+          <view class="text-green" style="font-size: 30px;">g</view>
+        </view>
+        <view class="text-xxl">蛋白质</view>
+      </view>
+      <view class="flex flex-sub flex-direction">
+        <view class="flex align-end justify-center">
+          <view class="text-sl text-green">{{foodItem.nutrition[2]}}</view>
+          <view class="text-green" style="font-size: 30px;">g</view>
+        </view>
+        <view class="text-xxl">脂肪</view>
+      </view>
+    </view>
+    <view class="detail-info-box text-grey">
+      <text class="left">膳食纤维</text>
+      <text class="right">{{foodItem.nutrition[3]}}g</text>
+      <text class="left">\n胆固醇</text>
+      <text class="right">{{foodItem.nutrition[4]}}mg</text>
+      <text class="left">\n维生素A</text>
+      <text class="right">{{foodItem.nutrition[5]}}ug</text>
+      <text class="left">\n维生素B1</text>
+      <text class="right">{{foodItem.nutrition[6]}}mg</text>
+      <text class="left">\n维生素B2</text>
+      <text class="right">{{foodItem.nutrition[7]}}mg</text>
+      <text class="left">\n维生素C</text>
+      <text class="right">{{foodItem.nutrition[8]}}mg</text>
+      <text class="left">\n维生素E</text>
+      <text class="right">{{foodItem.nutrition[9]}}mg</text>
+      <text class="left">\n叶酸</text>
+      <text class="right">{{foodItem.nutrition[10]}}ug</text>
+      <text class="left">\n钙</text>
+      <text class="right">{{foodItem.nutrition[11]}}ug</text>
+      <text class="left">\n铁</text>
+      <text class="right">{{foodItem.nutrition[12]}}mg</text>
+      <text class="left">\n钾</text>
+      <text class="right">{{foodItem.nutrition[13]}}mg</text>
+      <text class="left">\n锌</text>
+      <text class="right">{{foodItem.nutrition[14]}}mg</text>
+    </view>
+  </view>
+</view>

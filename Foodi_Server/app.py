@@ -22,6 +22,14 @@ def api_food(cata):
     if cata == "meat":
         return food[62:80]
 
+@app.route('/foodItem/<name>')
+def api_foodItem(name):
+    food = init_Food()
+    for foodItem in food:
+        if foodItem['name'] == name:
+            print(foodItem)
+            return foodItem
+
 
 @app.route('/test', methods=['POST'])
 def test():

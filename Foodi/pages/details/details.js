@@ -21,7 +21,7 @@ Page({
     console.log(options);
     let that = this;
     wx.request({
-      url: 'http://127.0.0.1:5000/foodItem/' + options.name,
+      url: 'http://127.0.0.1:5000/item/' + options.name,
       method: 'GET',
       header: {
         'content-type': 'application/json'

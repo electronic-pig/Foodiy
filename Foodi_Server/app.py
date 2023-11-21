@@ -32,13 +32,16 @@ def api_meal(cata):
             List.append(meal)
     return List
 
-@app.route('/foodItem/<name>')
-def api_foodItem(name):
+@app.route('/item/<name>')
+def api_item(name):
     food = init_Food()
     for foodItem in food:
         if foodItem['name'] == name:
-            print(foodItem)
             return foodItem
+    meal = init_Meal()
+    for mealItem in meal:
+        if mealItem['name'] == name:
+            return mealItem
 
 
 @app.route('/test', methods=['POST'])

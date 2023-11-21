@@ -5,7 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+  },
+  search(value) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: 'http://127.0.0.1:5000/meal/' + value,
+        method: 'GET',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: (res) => {
+          if (res.statusCode === 200) {
+            let selectResult = []
+            for(let i = 0; i < res.data.length; i++){
+              selectResult.push({text: res.data[i].name})
+            }
+            resolve(selectResult); // 请求成功时使用 resolve 返回数据
+          } else {
+            reject('请求失败'); // 如果请求失败，使用 reject 返回错误信息
+            console.log(url)
+          }
+        },
+        fail: (error) => {
+          reject(error); // 请求失败时使用 reject 返回错误信息
+        }
+      });
+    });
+  },
+  selectResult(e) {
+    console.log(e.detail)
   },
   // ListTouch触摸开始
   ListTouchStart(e) {
@@ -41,6 +70,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      search: this.search.bind(this)
+    });
     let that = this; // 保存页面实例的引用
     wx.request({
       url: 'http://127.0.0.1:5000' + options.cata,

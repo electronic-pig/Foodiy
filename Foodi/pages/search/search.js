@@ -43,7 +43,7 @@ Page({
   onLoad(options) {
     let that = this; // 保存页面实例的引用
     wx.request({
-      url: 'http://127.0.0.1:5000/food/' + options.cata,
+      url: 'http://127.0.0.1:5000' + options.cata,
       method: 'GET',
       header: {
         'content-type': 'application/json'

@@ -6,5 +6,5 @@
 <view style="display: flex;flex-direction: column;align-items: center;">
   <image src="/images/make.png" class="make-image"></image>
   <view class="tip">点击按钮，开始制作属于你的膳食吧！</view>
-  <button class="make" bindtap="add"><text class="cuIcon-roundadd"></text> 制作膳食 </button>
+  <button class="make" bindtap="makeMeal"><text class="cuIcon-roundadd"></text> 制作膳食 </button>
 </view>

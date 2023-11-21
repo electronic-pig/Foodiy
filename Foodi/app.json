@@ -7,6 +7,7 @@
     "pages/details/details",
     "pages/logs/logs",
     "pages/make/make",
+    "pages/makeMeal/makeMeal",
     "pages/diary/diary",
     "pages/user/user",
     "pages/body/body",

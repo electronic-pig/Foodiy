@@ -7,7 +7,11 @@ Page({
   data: {
 
   },
-
+  makeMeal(){
+    wx.navigateTo({
+      url: '../makeMeal/makeMeal',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

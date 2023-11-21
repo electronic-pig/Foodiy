@@ -7,7 +7,7 @@ Page({
   data: {
     foodItem: {},
     TabCur: 0,
-    Tab:['营养成分','烹饪方法'],
+    Tab:['营养成分','推荐食谱'],
   },
   tabSelect(e) {
     this.setData({

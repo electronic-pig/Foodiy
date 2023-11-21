@@ -1,0 +1,43 @@
+<!--pages/makeMeal/makeMeal.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>>
+  <view slot="content">制作膳食</view>
+</cu-custom>
+<mp-searchbar placeholder="搜索"></mp-searchbar>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item text-xl flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{4}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      {{Tab[index]}}
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{list.length}}">
+  <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{list}}" wx:key="index">
+      <navigator url="../details/details?name={{item.name}}" hover-class="none">
+        <image class="avatar" src="{{item.image}}"></image>
+      </navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+        <view class="text-green text-xl">评分：{{item.score}}</view>
+      </view>
+      <view class="stepper">
+        <!-- 减号 -->
+        <view class="iconfont icon-jianshao" hidden="{{!item.quantity}}" data-name="{{item.name}}" bindtap="minusCount"></view>
+        <!-- 数量 -->
+        <view class="value" hidden="{{!item.quantity}}" data-name="{{item.name}}">{{item.quantity}}</view>
+        <!-- 加号 -->
+        <view class="iconfont icon-zengjia" data-name="{{item.name}}" bindtap="addCount"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--底部  -->
+<view class="bottom_box">
+  <image class="shopCart_img" src="../../images/biandang-box.png" bindtap="cascadeToggle"></image>
+  <view class="all_money">评分：9.4，300g</view>
+  <button class="choose_ok bg-gradual-green" bindtap="gotoOrder">下一步</button>
+</view>

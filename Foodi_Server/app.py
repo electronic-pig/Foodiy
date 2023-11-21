@@ -22,6 +22,16 @@ def api_food(cata):
     if cata == "meat":
         return food[62:80]
 
+
+@app.route('/meal/<cata>')
+def api_meal(cata):
+    MealList = init_Meal()
+    List = []
+    for meal in MealList:
+        if cata in meal['cata']:
+            List.append(meal)
+    return List
+
 @app.route('/foodItem/<name>')
 def api_foodItem(name):
     food = init_Food()

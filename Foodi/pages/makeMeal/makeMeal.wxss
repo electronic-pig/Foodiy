@@ -1,0 +1,68 @@
+/* pages/makeMeal/makeMeal.wxss */
+.avatar {
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0rpx;
+  left: 10rpx;
+  width: 70px;
+  height: 70px;
+}
+
+.content {
+  margin-left: 10px;
+}
+
+.stepper {
+  display: flex;
+}
+
+.value {
+  font-size: 18px;
+  margin: auto 20rpx;
+  font-weight: bold;
+}
+
+.bottom_box {
+  background-color: #eee;
+  border-top: 2px solid rgb(214, 211, 211);
+  width: 100%;
+  height: 140rpx;
+  position: fixed;
+  left: 0;
+  bottom: -20px;
+  z-index: 9;
+}
+
+.shopCart_img {
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  bottom: 5px;
+}
+
+.all_money {
+  color: #000;
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 20%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 19px;
+}
+
+.choose_ok {
+  border: 0px;
+  border-radius: 0rpx;
+  position: absolute;
+  height: 100rpx;
+  top: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx;
+  width: 120px !important;
+}

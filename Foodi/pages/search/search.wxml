@@ -21,8 +21,8 @@
       <view class="text-grey text-xs">{{item.eva}}</view>
     </view>
     <view class="move">
-      <view class="{{item.add?'bg-gradual-red':'bg-gradual-green'}}" bindtap="{{item.add?'del':'add'}}" data-index="{{index}}">
-        <text class="{{item.add?'cuIcon-roundclose':'cuIcon-roundadd'}} xxl text-white"></text>
+      <view class="bg-gradual-green'" bindtap="add" data-item="{{item}}">
+        <text class="cuIcon-roundadd xxl text-white"></text>
       </view>
     </view>
   </view>

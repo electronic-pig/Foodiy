@@ -14,7 +14,9 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    
+    const meals = wx.getStorageSync('meals') || []
+    wx.setStorageSync('meals', meals)
     // 登录
     wx.login({
       success: res => {

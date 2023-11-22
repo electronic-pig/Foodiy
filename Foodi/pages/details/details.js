@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    foodItem: {},
+    Item: {},
     TabCur: 0,
     Tab: ['营养成分', '推荐做法'],
     recommendList: [],
@@ -45,6 +45,16 @@ Page({
       TabCur: e.currentTarget.dataset.id,
     });
   },
+  add() {
+    const meals = wx.getStorageSync('meals');
+    meals.push(this.data.Item);
+    wx.setStorageSync('meals', meals);
+    wx.showToast({
+      title: '添加成功',
+      icon: 'success',
+      duration: 2000
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -59,9 +69,9 @@ Page({
       success(res) {
         // 使用setData将返回的数据保存到页面的data中
         that.setData({
-          foodItem: res.data
+          Item: res.data
         });
-        if (that.data.foodItem.cata.includes('food')) {
+        if (that.data.Item.cata.includes('food')) {
           that.setData({
             Tab: ['营养成分', '推荐食谱'],
             isFood: true

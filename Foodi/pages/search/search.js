@@ -18,8 +18,8 @@ Page({
         success: (res) => {
           if (res.statusCode === 200) {
             let selectResult = []
-            for(let i = 0; i < res.data.length; i++){
-              selectResult.push({text: res.data[i].name})
+            for (let i = 0; i < res.data.length; i++) {
+              selectResult.push({ text: res.data[i].name })
             }
             resolve(selectResult); // 请求成功时使用 resolve 返回数据
           } else {
@@ -36,6 +36,16 @@ Page({
   selectResult(e) {
     wx.navigateTo({
       url: '../details/details?name=' + e.detail.item.text,
+    })
+  },
+  add(e) {
+    const meals = wx.getStorageSync('meals');
+    meals.push(e.currentTarget.dataset.item);
+    wx.setStorageSync('meals', meals);
+    wx.showToast({
+      title: '添加成功',
+      icon: 'success',
+      duration: 2000
     })
   },
   // ListTouch触摸开始

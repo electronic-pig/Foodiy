@@ -143,14 +143,13 @@ def init_Meal():
         if meal['score'] > 9:
             meal['eva'] = 'Excellent'
             meal['color'] = '#39b54a'
-    print(mealList)
     return mealList
 
 
 def write_image_urls_to_file():
     with open('static/mealUrl.txt', 'w', encoding='utf-8') as file:
         for meal in mealList:
-            url = f"http://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word={meal['name']}"
+            url = f"https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word={meal['name']}"
             html = requests.get(url).text
             pic_urls = re.findall('"objURL":"(.*?)",', html, re.S)
 
@@ -161,5 +160,20 @@ def write_image_urls_to_file():
                 print(f"No images found for {meal['name']}")
 
 
+def recommendByFood(food):
+    foodList = init_Food()
+    foodIndex = 0
+    for i in range(0, 79):
+        if foodList[i]['name'] == food:
+            foodIndex = i + 1
+            print(foodIndex)
+            break
+    recommendMeal = []
+    for meal in init_Meal():
+        if foodIndex in meal['list']:
+            recommendMeal.append(meal)
+    return recommendMeal
+
+
 if __name__ == '__main__':
-    init_Meal()
+    recommendByFood('牛肉')

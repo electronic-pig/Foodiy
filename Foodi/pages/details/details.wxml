@@ -17,7 +17,8 @@
   </view>
 </view>
 
-<button class="make" bindtap="make"><text class="cuIcon-roundadd"></text> 制作膳食</button>
+<button wx:if="{{isFood}}" class="make" bindtap="make"><text class="cuIcon-roundadd"></text> 制作膳食</button>
+<button wx:else="" class="make" bindtap="make"><text class="cuIcon-roundadd"></text> 加入今日食谱</button>
 
 <view class="more-info-bg">
   <scroll-view scroll-x class="bg-white nav">
@@ -77,6 +78,47 @@
       <text class="right">{{foodItem.nutrition[13]}}mg</text>
       <text class="left">\n锌</text>
       <text class="right">{{foodItem.nutrition[14]}}mg</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{TabCur==1 && isFood}}">
+  <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item" wx:for="{{recommendList}}" wx:key="index">
+      <navigator url="../details/details?name={{item.name}}" hover-class="none">
+        <image class="avatar" src="{{item.image}}"></image>
+      </navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+          {{item.score}}
+        </view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+      <view class="move">
+        <view class="{{item.add?'bg-gradual-red':'bg-gradual-green'}}" bindtap="{{item.add?'del':'add'}}" data-index="{{index}}">
+          <text class="{{item.add?'cuIcon-roundclose':'cuIcon-roundadd'}} xxl text-white"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{TabCur==1 && !isFood}}">
+  <view class="detail-info-box">
+    <view class='text-green text-xxl'>用料：</view>
+    <view wx:for="{{foods}}" wx:key="{{index}}">
+      <text class="left">{{item.name}}</text>
+      <text class="right">{{item.quantity}}</text>
+    </view>
+    <view class='margin-top text-green text-xxl'>步骤：</view>
+    <view wx:for="{{steps}}" wx:key="index">
+      <text class="">第 {{index+1}} 步:</text>
+      <image src='{{item.image}}'></image>
+      <text>{{item.text}}</text>
     </view>
   </view>
 </view>

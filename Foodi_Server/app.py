@@ -25,32 +25,35 @@ def api_food(cata):
 
 @app.route('/meal/<cata>')
 def api_meal(cata):
-    MealList = init_Meal()
     List = []
-    for meal in MealList:
+    for meal in init_Meal():
         if cata in meal['cata']:
             List.append(meal)
     return List
 
+
 @app.route('/item/<name>')
 def api_item(name):
-    food = init_Food()
-    for foodItem in food:
+    for foodItem in init_Food():
         if foodItem['name'] == name:
             return foodItem
-    meal = init_Meal()
-    for mealItem in meal:
+    for mealItem in init_Meal():
         if mealItem['name'] == name:
             return mealItem
 
+
 @app.route('/search/<key>')
 def api_search(key):
-    MealList = init_Meal()
     List = []
-    for meal in MealList:
+    for meal in init_Meal():
         if key in meal['name']:
             List.append(meal)
     return List
+
+
+@app.route('/recommendByFood/<food>')
+def api_recommend(food):
+   return recommendByFood(food)
 
 
 @app.route('/test', methods=['POST'])

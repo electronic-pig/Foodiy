@@ -18,7 +18,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options);
     let that = this;
     wx.request({
       url: 'http://127.0.0.1:5000/item/' + options.name,

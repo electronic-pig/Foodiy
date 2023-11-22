@@ -65,7 +65,6 @@ Page({
     })
   },
   bsChange(e) {
-    console.log(e.detail.value)
     this.setData({
       bs: this.data.bsArray[e.detail.value]
     })

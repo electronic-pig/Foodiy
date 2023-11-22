@@ -10,7 +10,7 @@ Page({
   search(value) {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: 'http://127.0.0.1:5000/meal/' + value,
+        url: 'http://127.0.0.1:5000/search/' + value,
         method: 'GET',
         header: {
           'content-type': 'application/json'
@@ -34,7 +34,9 @@ Page({
     });
   },
   selectResult(e) {
-    console.log(e.detail)
+    wx.navigateTo({
+      url: '../details/details?name=' + e.detail.item.text,
+    })
   },
   // ListTouch触摸开始
   ListTouchStart(e) {

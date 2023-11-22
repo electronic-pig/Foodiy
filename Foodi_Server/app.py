@@ -43,6 +43,15 @@ def api_item(name):
         if mealItem['name'] == name:
             return mealItem
 
+@app.route('/search/<key>')
+def api_search(key):
+    MealList = init_Meal()
+    List = []
+    for meal in MealList:
+        if key in meal['name']:
+            List.append(meal)
+    return List
+
 
 @app.route('/test', methods=['POST'])
 def test():

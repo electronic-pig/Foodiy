@@ -1,14 +1,14 @@
 <view class="header space-between">
-  <text class="iconfont" data-id="0" bindtap='dataBefor'>
-    <text class='left color'></text>
-  </text>
+  <view class="iconfont" data-id="0" bindtap='dataBefor'>
+    <image class='iconimage' src='/images/left.png'></image>
+  </view>
   <view class="btn flex-center" bindtap="dateSelection">
     <view class="text">{{selectDay}}</view>
     <text class=""></text>
   </view>
-  <text class="iconfont" data-id="1" bindtap='dataBefor'>
-    <text class='right color'></text>
-  </text>
+  <view class="iconfont" data-id="1" bindtap='dataBefor'>
+    <image class='iconimage' src='/images/right.png'></image>
+  </view>
 </view>
 <view wx:if='{{!calShow}}' class="{{isOpen?'':'calendar-box'}} {{dateShow?'active':''}}">
   <view class="calendar-wrapper {{dateShow?'active':''}}">

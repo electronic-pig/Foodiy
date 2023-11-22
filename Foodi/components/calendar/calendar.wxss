@@ -52,6 +52,11 @@
   line-height: 100rpx;
 }
 
+.iconimage {
+  width: 24px;
+  height: 24px;
+}
+
 .iconfont {
   display: flex;
   justify-content: center;
@@ -62,7 +67,8 @@
   height: 53rpx;
 }
 
-.iconfont .left, .iconfont .right {
+.iconfont .left,
+.iconfont .right {
   display: block;
   width: 0;
   height: 0;
@@ -123,7 +129,8 @@
   background: rgba(82, 184, 245, 0.1);
 }
 
-.date-befor, .date-after {
+.date-befor,
+.date-after {
   /* border: 1px red solid; */
   display: flex;
   justify-content: center;

@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    record: [],
+    totalScore: 9.9,
+    isToday: true,
   },
   /**
   * 日历是否被打开
@@ -18,13 +20,26 @@ Page({
    */
   bindgetdate(e) {
     let time = e.detail;
-    console.log(time)
+    console.log(time);
+    this.setData({
+      isToday: false
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let meals = wx.getStorageSync('meals');
+    let total = 0;
+    for (let i = 0; i < meals.length; i++) {
+      total += meals[i].score / meals.length;
+    }
+    this.setData({
+      totalScore: total.toFixed(1)
+    });
+    this.setData({
+      record: wx.getStorageSync('meals')
+    })
   },
 
   /**

@@ -1,1 +1,46 @@
 /* pages/record/record.wxss */
+.box {
+  border-top: 1px solid #e9e9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  background: #fff;
+  font-size: 20px;
+  color: #666;
+}
+
+.box .totalScore {
+  font-size: 50px;
+  color: #39b54a;
+}
+
+.box .updown {
+  width: 50px;
+  height: 50px;
+}
+
+.box .up {
+  width: 50px;
+  height: 50px;
+}
+
+.box .down {
+  width: 50px;
+  height: 50px;
+}
+
+.avatar {
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 20rpx;
+  left: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+}

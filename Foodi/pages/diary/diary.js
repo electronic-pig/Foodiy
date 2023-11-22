@@ -21,7 +21,7 @@ Page({
       total += meals[i].score / meals.length;
     }
     this.setData({
-      totalScore: total.toFixed(1) * 10
+      totalScore: total.toFixed(1)
     });
     this.draw('runCanvas', total * 10, 500);
   },

@@ -17,6 +17,9 @@ App({
     
     const meals = wx.getStorageSync('meals') || []
     wx.setStorageSync('meals', meals)
+
+    const recipe = wx.getStorageSync('recipe') || []
+    wx.setStorageSync('recipe', recipe)
     // 登录
     wx.login({
       success: res => {

@@ -1,0 +1,50 @@
+<!--pages/makeConfirm/makeConfirm.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">制作膳食</view>
+</cu-custom>
+
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text> 根据您所选的食材，我们为您推荐以下膳食
+  </view>
+</view>
+<swiper class="card-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-active-color="#eee">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" :class="cardCur==index?'cur':''">
+    <navigator url="../details/details?name={{item.name}}" hover-class="none" class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill"></image>
+    </navigator>
+  </swiper-item>
+</swiper>
+<view style="color: grey;margin-left: 10px;">已选食材</view>
+<view class="cu-list menu-avatar solid-bottom">
+  <view class="solid-bottom cu-item" wx:for="{{recipeList}}" wx:key="index">
+    <navigator url="../details/details?name={{item.name}}" hover-class="none">
+      <image class="avatar" src="{{item.image}}"></image>
+    </navigator>
+    <view class="name">
+      <view class="text-black text-xl">{{item.name}}</view>
+    </view>
+    <view class="text-lg text-grey">1 × {{item.amount}}g</view>
+  </view>
+</view>
+<view class="cook_text">请选择烹调方式：</view>
+<view class='cook_view solid-bottom'>
+  <radio-group class='radios' bindchange='radioChange'>
+    <view class="radio" wx:for="{{radioList}}" wx:key="index">
+      <radio id="{{item.name}}" hidden value="{{item.id}}" checked="{{item.checked}}" data-id='item.index'></radio>
+      <label class="radio_text" for="{{item.name}}">
+        <text class='{{item.checked?"checked":"normalt"}}'>{{item.name}}</text>
+      </label>
+    </view>
+  </radio-group>
+</view>
+<view class="cu-form-group">
+  <input bindinput="getInput" value="{{name}}" placeholder="给你的膳食起个名吧~"></input>
+</view>
+<view class="totalScore">评分：<text class="text-sl text-green">9.7</text></view>
+
+<view class="complete-box">
+  <button class="complete" bindtap="complete">制作完成</button>
+</view>
+<view style="height: 20px;"></view>

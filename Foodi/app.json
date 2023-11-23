@@ -8,6 +8,7 @@
     "pages/logs/logs",
     "pages/make/make",
     "pages/makeMeal/makeMeal",
+    "pages/makeConfirm/makeConfirm",
     "pages/diary/diary",
     "pages/user/user",
     "pages/body/body",

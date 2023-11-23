@@ -8,6 +8,8 @@ Page({
     list: [],
     TabCur: 0,
     Tab: ['五谷杂粮', '蔬菜', '水果', '肉蛋、水产'],
+    totalScore: 0,
+    totalAmount: 0,
   },
   tabSelect(e) {
     this.setData({
@@ -37,19 +39,32 @@ Page({
       }
     });
   },
-  minusCount(e) {
-    let list = this.data.list;
-    list.find(item => item.name === e.currentTarget.dataset.name).quantity -= 1;
+  make(e) {
+    let recipe = wx.getStorageSync('recipe');
+    recipe.push(e.currentTarget.dataset.item);
+    console.log(recipe);
+    wx.setStorageSync('recipe', recipe);
+    wx.showToast({
+      title: '添加成功',
+      icon: 'success',
+      duration: 1000
+    });
+    recipe = wx.getStorageSync('recipe');
+    let total = 0;
+    let amount = 0;
+    for (let i = 0; i < recipe.length; i++) {
+      total += recipe[i].score / recipe.length;
+      amount += recipe[i].amount;
+    }
     this.setData({
-      list: list
+      totalScore: total.toFixed(1),
+      totalAmount: amount
     });
   },
-  addCount(e) {
-    let list = this.data.list;
-    list.find(item => item.name === e.currentTarget.dataset.name).quantity += 1;
-    this.setData({
-      list: list
-    });
+  next(){
+    wx.navigateTo({
+      url: '../makeConfirm/makeConfirm',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -64,15 +79,22 @@ Page({
       },
       success(res) {
         // 使用setData将返回的数据保存到页面的data中
-        let newList = res.data;
-        newList.forEach(item => {
-          item.quantity = 0;
-        });
-        console.log(newList)
         that.setData({
-          list: newList
+          list: res.data
         });
       }
+    });
+    let recipe = wx.getStorageSync('recipe');
+    console.log(wx.getStorageSync('recipe'))
+    let total = 0;
+    let amount = 0;
+    for (let i = 0; i < recipe.length; i++) {
+      total += recipe[i].score / recipe.length;
+      amount += recipe[i].amount;
+    }
+    this.setData({
+      totalScore: total.toFixed(1),
+      totalAmount: amount
     });
   },
 

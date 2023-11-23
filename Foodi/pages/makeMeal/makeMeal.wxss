@@ -43,7 +43,7 @@
   bottom: 5px;
 }
 
-.all_money {
+.total {
   color: #000;
   position: absolute;
   width: 50%;

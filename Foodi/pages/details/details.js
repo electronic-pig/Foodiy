@@ -55,6 +55,14 @@ Page({
       duration: 2000
     })
   },
+  make() {
+    const recipe = wx.getStorageSync('recipe');
+    recipe.push(this.data.Item);
+    wx.setStorageSync('recipe', recipe);
+    wx.navigateTo({
+      url: '../makeMeal/makeMeal',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

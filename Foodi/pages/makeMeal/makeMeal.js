@@ -85,7 +85,6 @@ Page({
       }
     });
     let recipe = wx.getStorageSync('recipe');
-    console.log(wx.getStorageSync('recipe'))
     let total = 0;
     let amount = 0;
     for (let i = 0; i < recipe.length; i++) {

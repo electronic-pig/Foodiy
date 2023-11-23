@@ -7,7 +7,9 @@ Page({
   data: {
     recipeList: [],
     radioList: [{ name: '炒', checked: true, id: 1 }, { name: '煎', checked: false, id: 2 }, { name: '蒸', checked: false, id: 3 }, { name: '炖', checked: false, id: 4 }, { name: '煮', checked: false, id: 5 }, { name: '烤', checked: false, id: 6 }, { name: '焖', checked: false, id: 7 }, { name: '炸', checked: false, id: 8 }],
-    name: '',
+    index: -1,
+    imgList: [],
+    mealMade: { name: '', amount: 0, cal: 0, score: 0, eva: '', color: '', nutrition: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
     swiperList: [{
       id: 0,
       type: 'image',
@@ -35,12 +37,84 @@ Page({
       radioList: radioList
     })
   },
+  getInput(e) {
+    let mealMade = this.data.mealMade;
+    mealMade.name = e.detail.value;
+    this.setData({
+      mealMade: mealMade
+    })
+  },
+  ChooseImage() {
+    wx.chooseImage({
+      count: 1, //默认9
+      sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album'], //从相册选择
+      success: (res) => {
+        if (this.data.imgList.length != 0) {
+          this.setData({
+            imgList: this.data.imgList.concat(res.tempFilePaths)
+          })
+        } else {
+          this.setData({
+            imgList: res.tempFilePaths
+          })
+        }
+      }
+    });
+  },
+  ViewImage(e) {
+    wx.previewImage({
+      urls: this.data.imgList,
+      current: e.currentTarget.dataset.url
+    });
+  },
+  DelImg(e) {
+    this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+    this.setData({
+      imgList: this.data.imgList
+    })
+  },
+  complete() {
+    wx.switchTab({
+      url: '../make/make',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     this.setData({
       recipeList: wx.getStorageSync('recipe')
+    });
+    let mealMade = this.data.mealMade;
+    let recipeList = this.data.recipeList;
+    for (let i = 0; i < recipeList.length; i++) {
+      mealMade.amount += recipeList[i].amount;
+      mealMade.cal += recipeList[i].cal;
+      mealMade.score += recipeList[i].score / recipeList.length;
+      for (let j = 0; j < recipeList[i].nutrition.length; j++) {
+        mealMade.nutrition[j] += recipeList[i].nutrition[j];
+      };
+    };
+    mealMade.score = mealMade.score.toFixed(1);
+    if (mealMade.score <= 4) {
+      mealMade.eva = 'Limit'
+      mealMade.color = '#fbbd08'
+    }
+    else if (mealMade.score <= 6) {
+      mealMade.eva = 'Normal'
+      mealMade.color = '#666666'
+    }
+    else if (mealMade.score <= 8) {
+      mealMade.eva = 'Good'
+      mealMade.color = '#8dc63f'
+    }
+    else {
+      mealMade.eva = 'Excellent'
+      mealMade.color = '#39b54a'
+    };
+    this.setData({
+      mealMade: mealMade,
     })
   },
 

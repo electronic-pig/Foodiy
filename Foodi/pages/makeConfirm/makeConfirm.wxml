@@ -40,11 +40,24 @@
   </radio-group>
 </view>
 <view class="cu-form-group">
-  <input bindinput="getInput" value="{{name}}" placeholder="给你的膳食起个名吧~"></input>
+  <input bindinput="getInput" placeholder="输入膳食名称"></input>
 </view>
-<view class="totalScore">评分：<text class="text-sl text-green">9.7</text></view>
+<view class="cu-form-group">
+  <view class="grid col-4 grid-square flex-sub margin-top">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+<view class="totalScore">评分：<text class="text-sl text-green">{{mealMade.score}}</text></view>
 
 <view class="complete-box">
   <button class="complete" bindtap="complete">制作完成</button>
 </view>
-<view style="height: 20px;"></view>
+<view style="height: 30px;"></view>

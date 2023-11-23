@@ -9,7 +9,7 @@ Page({
     radioList: [{ name: '炒', checked: true, id: 1 }, { name: '煎', checked: false, id: 2 }, { name: '蒸', checked: false, id: 3 }, { name: '炖', checked: false, id: 4 }, { name: '煮', checked: false, id: 5 }, { name: '烤', checked: false, id: 6 }, { name: '焖', checked: false, id: 7 }, { name: '炸', checked: false, id: 8 }],
     index: -1,
     imgList: [],
-    mealMade: { name: '', amount: 0, cal: 0, score: 0, eva: '', color: '', nutrition: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+    mealMade: { name: '', amount: 0, cal: 0, score: 0, eva: '', color: '', image: '', nutrition: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
     swiperList: [{
       id: 0,
       type: 'image',
@@ -55,9 +55,12 @@ Page({
             imgList: this.data.imgList.concat(res.tempFilePaths)
           })
         } else {
+          let mealMade = this.data.mealMade;
+          mealMade.image = res.tempFilePaths[0];
           this.setData({
-            imgList: res.tempFilePaths
-          })
+            imgList: res.tempFilePaths,
+            mealMade: mealMade
+          });
         }
       }
     });
@@ -75,6 +78,10 @@ Page({
     })
   },
   complete() {
+    let mealMadeList = wx.getStorageSync('mealMadeList');
+    mealMadeList.push(this.data.mealMade);
+    wx.setStorageSync('mealMadeList', mealMadeList);
+    wx.setStorageSync('recipe', []);
     wx.switchTab({
       url: '../make/make',
     })

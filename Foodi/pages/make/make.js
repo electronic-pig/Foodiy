@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    mealMadeList: []
   },
-  makeMeal(){
+  makeMeal() {
     wx.navigateTo({
       url: '../makeMeal/makeMeal',
     })
@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
   },
 
   /**
@@ -30,7 +29,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      mealMadeList: wx.getStorageSync('mealMadeList')
+    })
   },
 
   /**

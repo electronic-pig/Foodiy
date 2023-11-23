@@ -46,7 +46,7 @@ Page({
     });
   },
   add() {
-    const meals = wx.getStorageSync('meals');
+    let meals = wx.getStorageSync('meals');
     meals.push(this.data.Item);
     wx.setStorageSync('meals', meals);
     wx.showToast({
@@ -56,7 +56,7 @@ Page({
     })
   },
   make() {
-    const recipe = wx.getStorageSync('recipe');
+    let recipe = wx.getStorageSync('recipe');
     recipe.push(this.data.Item);
     wx.setStorageSync('recipe', recipe);
     wx.navigateTo({

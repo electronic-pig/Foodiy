@@ -42,7 +42,6 @@ Page({
   make(e) {
     let recipe = wx.getStorageSync('recipe');
     recipe.push(e.currentTarget.dataset.item);
-    console.log(recipe);
     wx.setStorageSync('recipe', recipe);
     wx.showToast({
       title: '添加成功',

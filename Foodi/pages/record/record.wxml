@@ -5,27 +5,32 @@
 </cu-custom>
 <!-- 日历组件 -->
 <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
-
-<view class='box'>当日得分：<view class='totalScore'>{{totalScore}}</view>
-  <view class='updown'>
-    <image src='/images/up.png' class='up'></image>
-    <!-- <image src='/images/down.png' class='down'></image> -->
+<view wx:if="{{isToday}}">
+  <view class='box'>当日得分：<view class='totalScore'>{{totalScore}}</view>
+    <view class='updown'>
+      <image src='/images/up.png' class='up'></image>
+      <!-- <image src='/images/down.png' class='down'></image> -->
+    </view>
+  </view>
+  <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item" wx:for="{{record}}" wx:key="index">
+      <navigator url="../details/details?name={{item.name}}" hover-class="none">
+        <image class="avatar" src="{{item.image}}"></image>
+      </navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+          {{item.score}}
+        </view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+    </view>
   </view>
 </view>
-<view class="cu-list menu-avatar">
-  <view class="solid-bottom cu-item" wx:for="{{record}}" wx:key="index">
-    <navigator url="../details/details?name={{item.name}}" hover-class="none">
-      <image class="avatar" src="{{item.image}}"></image>
-    </navigator>
-    <view class="content">
-      <view class="text-black">{{item.name}}</view>
-      <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
-    </view>
-    <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
-      <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
-        {{item.score}}
-      </view>
-      <view class="text-grey text-xs">{{item.eva}}</view>
-    </view>
-  </view>
+
+<view wx:else>
+  <view style="text-align: center;">这一天没有打卡~</view>
 </view>

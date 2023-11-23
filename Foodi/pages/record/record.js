@@ -13,17 +13,21 @@ Page({
   * 日历是否被打开
   */
   bindselect(e) {
-    console.log(e.detail.ischeck)
+    console.log(e.detail.ischeck);
   },
   /**
    * 获取选择日期
    */
   bindgetdate(e) {
-    let time = e.detail;
-    console.log(time);
-    this.setData({
-      isToday: false
-    })
+    if (e.detail.date != new Date().getDate()) {
+      this.setData({
+        isToday: false
+      })
+    } else {
+      this.setData({
+        isToday: true
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

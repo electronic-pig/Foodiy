@@ -2,8 +2,32 @@
 <cu-custom bgColor="bg-gradual-green">
   <view slot="content">制作膳食</view>
 </cu-custom>
-
-<view style="display: flex;flex-direction: column;align-items: center;">
+<view wx:if="{{mealMadeList.length}}">
+  <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{mealMadeList}}" wx:key="index" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <navigator url="../details/details?name={{item.name}}" hover-class="none">
+        <image class="avatar" src="{{item.image}}"></image>
+      </navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+          {{item.score}}
+        </view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+      <view class="move">
+        <view class="bg-gradual-red" bindtap="del" data-item="{{item}}">
+          <text class="cuIcon-roundclose xxl text-white"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="make" bindtap="makeMeal"><text class="cuIcon-roundadd"></text> 制作膳食 </button>
+</view>
+<view wx:else style="display: flex;flex-direction: column;align-items: center;">
   <image src="/images/make.png" class="make-image"></image>
   <view class="tip">点击按钮，开始制作属于你的膳食吧！</view>
   <button class="make" bindtap="makeMeal"><text class="cuIcon-roundadd"></text> 制作膳食 </button>

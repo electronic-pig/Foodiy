@@ -39,7 +39,7 @@ Page({
     })
   },
   add(e) {
-    const meals = wx.getStorageSync('meals');
+    let meals = wx.getStorageSync('meals');
     meals.push(e.currentTarget.dataset.item);
     wx.setStorageSync('meals', meals);
     wx.showToast({

@@ -41,6 +41,9 @@ Page({
         icon: 'success',
         duration: 2000
       });
+      let daysCount = wx.getStorageSync('daysCount');
+      daysCount += 1;
+      wx.setStorageSync('daysCount', daysCount);
     };
     this.setData({
       showConfirm: false

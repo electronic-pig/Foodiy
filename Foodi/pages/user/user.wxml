@@ -25,7 +25,7 @@
   </view>
   <view class="flex flex-sub flex-direction solid-right">
     <view class="flex align-end justify-center">
-      <view class="text-xxl text-blue ">10</view>
+      <view class="text-xxl text-blue ">{{daysCount}}</view>
       <view class="text-df text-blue padding-left-xs padding-bottom-xs">天</view>
     </view>
     <view class="margin-top-sm">
@@ -34,7 +34,7 @@
   </view>
   <view class="flex flex-sub flex-direction">
     <view class="flex align-end justify-center">
-      <view class="text-xxl text-yellow ">30</view>
+      <view class="text-xxl text-yellow ">{{daysCount}}</view>
       <view class="text-df text-yellow padding-left-xs padding-bottom-xs">枚</view>
     </view>
     <view class="margin-top-sm">

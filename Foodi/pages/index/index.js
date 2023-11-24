@@ -33,11 +33,6 @@ Page({
       type: 'image',
       name: '水果沙拉',
       url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fss2.meipian.me%2Fusers%2F18118420%2Ffee5c4e8f3b94ae0946932f77e6ce4d6.jpg%3Fmeipian-raw%2Fbucket%2Fivwen%2Fkey%2FdXNlcnMvMTgxMTg0MjAvZmVlNWM0ZThmM2I5NGFlMDk0NjkzMmY3N2U2Y2U0ZDYuanBn%2Fsign%2F7c4c02063c2dc1734b3122b79d611e11.jpg&refer=http%3A%2F%2Fss2.meipian.me&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703156618&t=96aaf70aa12c1f107923022108612eb9'
-    }, {
-      id: 6,
-      type: 'image',
-      name: '丝瓜炒小鲜',
-      url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F1e9bcab0-5496-4a7a-b504-8ad8dfcb478f%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703156632&t=e7cfb95c31f0442683161ec84d25e278'
     }]
   },
   search() {

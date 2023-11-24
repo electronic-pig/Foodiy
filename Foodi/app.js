@@ -20,6 +20,12 @@ App({
 
     const recipe = wx.getStorageSync('recipe') || []
     wx.setStorageSync('recipe', recipe)
+
+    const mealMadeList = wx.getStorageSync('mealMadeList') || []
+    wx.setStorageSync('mealMadeList', mealMadeList)
+
+    const daysCount = wx.getStorageSync('daysCount') || 9
+    wx.setStorageSync('daysCount', daysCount)
     // 登录
     wx.login({
       success: res => {

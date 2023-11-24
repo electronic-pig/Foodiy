@@ -5,7 +5,8 @@ Page({
    */
   data: {
     showDialog: false,
-    buttons: [{text: '确认'}]
+    buttons: [{ text: '确认' }],
+    daysCount: 0
   },
   // 事件处理函数
   toLogin() {
@@ -13,17 +14,17 @@ Page({
       url: '../login/login',
     })
   },
-  showUS(){
+  showUS() {
     this.setData({
       showDialog: true
     })
   },
-  tapDialogButton(){
+  tapDialogButton() {
     this.setData({
       showDialog: false
     })
   },
-  clean(){
+  clean() {
     wx.showLoading({
       title: '清理中',
     });
@@ -41,7 +42,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    
   },
 
   /**
@@ -55,7 +56,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    
+    this.setData({
+      daysCount: wx.getStorageSync('daysCount'),
+    })
   },
 
   /**

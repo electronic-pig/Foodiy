@@ -23,7 +23,7 @@ Page({
     this.setData({
       totalScore: total.toFixed(1)
     });
-    this.draw('runCanvas', total * 10, 500);
+    this.draw('runCanvas', total.toFixed(1) * 10, 500);
   },
   showConfirm() {
     this.setData({
